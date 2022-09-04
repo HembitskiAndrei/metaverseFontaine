@@ -8,3 +8,9 @@ export interface IWaterMaterialConfig {
   FragmentDefinitions: string;
   FragmentBeforeFragColor: string;
 }
+
+export interface IDownWaterConfig {
+  radius: number,
+  height: number,
+  radiusRange: number
+}

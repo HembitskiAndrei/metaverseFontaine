@@ -1,5 +1,8 @@
-import { PBRCustomMaterial } from "@babylonjs/materials";
-import {Engine, Color3, Texture, Vector2} from "@babylonjs/core";
+import { PBRCustomMaterial } from "@babylonjs/materials/custom/pbrCustomMaterial";
+import { Engine } from "@babylonjs/core/Engines/engine";
+import { Vector2} from "@babylonjs/core/Maths/math.vector";
+import {Texture} from "@babylonjs/core/Materials/Textures/texture";
+import {Color3} from "@babylonjs/core/Maths/math.color";
 import { IWaterMaterialConfig, SceneType } from "../utils/types";
 
 class WaterMaterial extends PBRCustomMaterial {
@@ -9,6 +12,7 @@ class WaterMaterial extends PBRCustomMaterial {
     speedFragment: number,
     speedFoamFragment: number,
     scale: Vector2,
+    color: Color3,
     scene: SceneType
   ) {
     super(name, scene);
@@ -40,7 +44,7 @@ class WaterMaterial extends PBRCustomMaterial {
       this.getEffect().setFloat2("scale", scale.x, scale.y);
       this.getEffect().setFloat("speedFragment", speedFragment);
       this.getEffect().setFloat("speedFoamFragment", speedFoamFragment);
-      this.getEffect().setColor3("color", new Color3(0.35, 0.35, 0.35));
+      this.getEffect().setColor3("color", color);
     });
 
   }
