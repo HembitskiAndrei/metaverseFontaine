@@ -3,7 +3,8 @@ import { Engine } from "@babylonjs/core/Engines/engine";
 import { Vector2} from "@babylonjs/core/Maths/math.vector";
 import {Texture} from "@babylonjs/core/Materials/Textures/texture";
 import {Color3} from "@babylonjs/core/Maths/math.color";
-import { IWaterMaterialConfig, SceneType } from "../utils/types";
+import { Scene } from "@babylonjs/core/scene";
+import { IWaterMaterialConfig } from "../utils/types";
 
 class WaterMaterial extends PBRCustomMaterial {
   constructor(
@@ -13,7 +14,7 @@ class WaterMaterial extends PBRCustomMaterial {
     speedFoamFragment: number,
     scale: Vector2,
     color: Color3,
-    scene: SceneType
+    scene: Scene
   ) {
     super(name, scene);
     this.backFaceCulling = false;

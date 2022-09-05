@@ -2,11 +2,12 @@ import {ParticleSystem} from "@babylonjs/core/Particles/particleSystem";
 import {CylinderDirectedParticleEmitter} from "@babylonjs/core/Particles/EmitterTypes/cylinderParticleEmitter";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { Color4 } from "@babylonjs/core/Maths/math.color";
-import { SceneType, IDownWaterConfig } from "../utils/types";
+import { Scene } from "@babylonjs/core/scene";
+import { IDownWaterConfig } from "../utils/types";
 
 export class DownWaterParticles extends ParticleSystem {
 
-  constructor(name: string, capacity: number, size: IDownWaterConfig, scene: SceneType) {
+  constructor(name: string, capacity: number, size: IDownWaterConfig, scene: Scene) {
     super(name, capacity, scene)
 
     this.renderingGroupId = 2;
